@@ -133,10 +133,10 @@
   <div class="free-panel" style="margin-top:12px">
     <h3 style="color:var(--tour)">Best free-day opportunities</h3>
     <div style="font-size:12px;color:var(--muted);line-height:1.8">
-      • <strong style="color:var(--tour)">Sat 23 May (Day 6)</strong> — essentially fully free until 20:30 briefing. Day trip possible.<br>
-      • <strong style="color:var(--tour)">Tue 26 May (Day 9)</strong> — fully free all day in Beijing until 20:30 briefing. Great Wall / Forbidden City day.<br>
+      • <strong style="color:var(--tour)">Tue 26 May (Day 9)</strong> — fully free entire day in Beijing. Great Wall / Forbidden City day.<br>
+      • <strong style="color:var(--tour)">Sat 23 May (Day 6)</strong> — Shanghai Planetarium trip to Lingang, then free until 20:30 briefing.<br>
       • <strong style="color:var(--text)">Mon 18 May AM</strong> — long free morning before 15:00 airport.<br>
-      • <strong style="color:var(--text)">Wed 27 May PM</strong> — free afternoon after Peking Uni morning visit.<br>
+      • <strong style="color:var(--text)">Wed 20 May evening</strong> — Nanjing Rd + Oriental Pearl Tower group activity.<br>
       • Most evenings have <strong style="color:var(--text)">~2–3 hours free</strong> after dinner.<br>
     </div>
   </div>
@@ -145,15 +145,15 @@
 <script>
 const days = [
   {no:1, date:'Mon 18 May', city:'SG → Shanghai', summary:'Travel day'},
-  {no:2, date:'Tue 19 May', city:'Shanghai', summary:'EnjoyAI'},
-  {no:3, date:'Wed 20 May', city:'Shanghai', summary:'NIO · Hitachi Energy'},
+  {no:2, date:'Tue 19 May', city:'Shanghai', summary:'EnjoyAI · NIO'},
+  {no:3, date:'Wed 20 May', city:'Shanghai', summary:'EnjoyAI · Hitachi'},
   {no:4, date:'Thu 21 May', city:'Shanghai/Suzhou', summary:'TUS · Qichacha'},
-  {no:5, date:'Fri 22 May', city:'Shanghai', summary:'DBS · SenseTime'},
+  {no:5, date:'Fri 22 May', city:'Shanghai', summary:'Qifu · DBS'},
   {no:6, date:'Sat 23 May', city:'Shanghai', summary:'Planetarium day'},
   {no:7, date:'Sun 24 May', city:'SH → Beijing', summary:'Train transit'},
   {no:8, date:'Mon 25 May', city:'Beijing', summary:'BIT · iFlytek'},
   {no:9, date:'Tue 26 May', city:'Beijing', summary:'FREE DAY'},
-  {no:10, date:'Wed 27 May', city:'Beijing', summary:'Peking Uni / JDL'},
+  {no:10, date:'Wed 27 May', city:'Beijing', summary:'JDL'},
   {no:11, date:'Thu 28 May', city:'BJ → SG', summary:'Return flight'},
 ];
 
@@ -165,32 +165,36 @@ const events = [
   {d:0, s:17, e:23, c:'travel', t:'Flight SIN→SHA'},
   {d:0, s:23, e:24, c:'travel', t:'Airport + Travel Time'},
 
-  // Day 2 — 19 May Shanghai · EnjoyAI
-  {d:1, s:5.5, e:12.5, c:'free', t:'Free time'},
-  {d:1, s:12.5, e:13.5, c:'meal', t:'Lunch'},
-  {d:1, s:13.5, e:18, c:'biz', t:'EnjoyAI'},
-  {d:1, s:18, e:20.5, c:'meal', t:'Dinner'},
+  // Day 2 — 19 May Shanghai · EnjoyAI + NIO
+  {d:1, s:5.5, e:8.5, c:'free', t:'Free time'},
+  {d:1, s:8.5, e:9.5, c:'admin', t:'Wake up'},
+  {d:1, s:9.5, e:10, c:'travel', t:'Travel'},
+  {d:1, s:10, e:13, c:'biz', t:'EnjoyAI / Shanghai Talent', cn:'上海人才'},
+  {d:1, s:13, e:14, c:'travel', t:'Travel'},
+  {d:1, s:14, e:17, c:'biz', t:'NIO (Shanghai)', cn:'蔚来汽车'},
+  {d:1, s:17, e:18.5, c:'tour', t:'Tourism'},
+  {d:1, s:18.5, e:20.5, c:'meal', t:'Dinner'},
   {d:1, s:20.5, e:23, c:'free', t:'Free time'},
   {d:1, s:23, e:24, c:'sleep', t:'Sleep'},
 
-  // Day 3 — 20 May Shanghai · NIO + Hitachi
-  {d:2, s:5.5, e:8.5, c:'free', t:'Free time'},
-  {d:2, s:8.5, e:9.5, c:'admin', t:'Wake up'},
-  {d:2, s:9.5, e:10, c:'travel', t:'Travel'},
-  {d:2, s:10, e:12, c:'biz', t:'NIO (Shanghai)', cn:'蔚来汽车'},
-  {d:2, s:12, e:13.5, c:'meal', t:'Lunch'},
-  {d:2, s:13.5, e:16.5, c:'biz', t:'Hitachi Energy', cn:'日立能源'},
-  {d:2, s:16.5, e:18.5, c:'tour', t:'Tourism'},
-  {d:2, s:18.5, e:20.5, c:'meal', t:'Dinner'},
-  {d:2, s:20.5, e:23, c:'free', t:'Free time'},
-  {d:2, s:23, e:24, c:'sleep', t:'Sleep'},
+  // Day 3 — 20 May Shanghai · EnjoyAI + Hitachi
+  {d:2, s:5.5, e:7.5, c:'free', t:'Free time'},
+  {d:2, s:7.5, e:8.5, c:'admin', t:'Wake up'},
+  {d:2, s:8.5, e:9, c:'travel', t:'Travel'},
+  {d:2, s:9, e:12, c:'biz', t:'EnjoyAI / Shanghai Talent', cn:'上海人才'},
+  {d:2, s:12, e:13, c:'meal', t:'Lunch'},
+  {d:2, s:13, e:16, c:'biz', t:'Hitachi Energy', cn:'日立能源'},
+  {d:2, s:16, e:17.5, c:'tour', t:'Tourism'},
+  {d:2, s:17.5, e:19.5, c:'meal', t:'Dinner'},
+  {d:2, s:19.5, e:22, c:'tour', t:'Nanjing Rd + Oriental Pearl Tower'},
+  {d:2, s:22, e:24, c:'sleep', t:'Sleep'},
 
   // Day 4 — 21 May Shanghai→Suzhou · TUS + Qichacha
   {d:3, s:5.5, e:7.5, c:'free', t:'Free time'},
-  {d:3, s:7.5, e:9, c:'admin', t:'Wake up'},
-  {d:3, s:9, e:10.5, c:'travel', t:'Travel SH→Suzhou'},
+  {d:3, s:7.5, e:8.5, c:'admin', t:'Wake up'},
+  {d:3, s:8.5, e:10.5, c:'travel', t:'Travel SH→Suzhou'},
   {d:3, s:10.5, e:12.5, c:'biz', t:'TUS-Suzhou', cn:'启迪苏州'},
-  {d:3, s:12.5, e:14, c:'meal', t:'Lunch'},
+  {d:3, s:12.5, e:14, c:'meal', t:'Lunch + Travel'},
   {d:3, s:14, e:16.5, c:'biz', t:'Qichacha (Suzhou)', cn:'企查查'},
   {d:3, s:16.5, e:19, c:'tour', t:'Tourism (Suzhou)'},
   {d:3, s:19, e:20.5, c:'meal', t:'Dinner (Suzhou)'},
@@ -198,15 +202,17 @@ const events = [
   {d:3, s:21.5, e:23, c:'free', t:'Free time'},
   {d:3, s:23, e:24, c:'sleep', t:'Sleep'},
 
-  // Day 5 — 22 May Shanghai · DBS/SenseTime
+  // Day 5 — 22 May Shanghai · Qifu + DBS
   {d:4, s:5.5, e:8, c:'free', t:'Free time'},
   {d:4, s:8, e:9, c:'admin', t:'Wake up'},
-  {d:4, s:9, e:10.5, c:'travel', t:'Travel'},
-  {d:4, s:10.5, e:12.5, c:'biz', t:'DBS / SenseTime'},
-  {d:4, s:12.5, e:13, c:'travel', t:'Travel'},
-  {d:4, s:13, e:14, c:'meal', t:'Lunch'},
-  {d:4, s:14, e:18, c:'tour', t:'Tourism'},
-  {d:4, s:18, e:20.5, c:'meal', t:'Dinner'},
+  {d:4, s:9, e:9.5, c:'travel', t:'Travel'},
+  {d:4, s:9.5, e:12, c:'biz', t:'Qifu Technology Visit', cn:'奇富科技参访'},
+  {d:4, s:12, e:12.5, c:'travel', t:'Travel'},
+  {d:4, s:12.5, e:13.5, c:'meal', t:'Lunch'},
+  {d:4, s:13.5, e:14, c:'travel', t:'Travel'},
+  {d:4, s:14, e:17, c:'biz', t:'DBS'},
+  {d:4, s:17, e:18.5, c:'tour', t:'Tourism'},
+  {d:4, s:18.5, e:20.5, c:'meal', t:'Dinner'},
   {d:4, s:20.5, e:23, c:'free', t:'Free time'},
   {d:4, s:23, e:24, c:'sleep', t:'Sleep'},
 
@@ -225,7 +231,7 @@ const events = [
   {d:6, s:5.5, e:9, c:'free', t:'Free time'},
   {d:6, s:9, e:9.5, c:'admin', t:'Wake up'},
   {d:6, s:9.5, e:10, c:'admin', t:'Check out'},
-  {d:6, s:10, e:11, c:'travel', t:'Travel to train station'},
+  {d:6, s:10, e:11, c:'travel', t:'Travel + Train station'},
   {d:6, s:11, e:16.5, c:'travel', t:'Train SH→Beijing'},
   {d:6, s:16.5, e:17.5, c:'travel', t:'Travel to hotel'},
   {d:6, s:17.5, e:18, c:'admin', t:'Check in'},
@@ -234,38 +240,36 @@ const events = [
   {d:6, s:23, e:24, c:'sleep', t:'Sleep'},
 
   // Day 8 — 25 May Beijing · BIT + iFlytek
-  {d:7, s:5.5, e:8.5, c:'free', t:'Free time'},
-  {d:7, s:8.5, e:9.5, c:'admin', t:'Wake up'},
-  {d:7, s:9.5, e:10.5, c:'travel', t:'Travel'},
-  {d:7, s:10.5, e:12.5, c:'biz', t:'BIT', cn:'北京理工大学'},
+  {d:7, s:5.5, e:7.5, c:'free', t:'OTOT'},
+  {d:7, s:7.5, e:8.5, c:'admin', t:'Wake up'},
+  {d:7, s:8.5, e:9.5, c:'travel', t:'Travel'},
+  {d:7, s:9.5, e:12, c:'biz', t:'BIT', cn:'北京理工大学'},
+  {d:7, s:12, e:12.5, c:'travel', t:'Travel'},
   {d:7, s:12.5, e:14, c:'meal', t:'Lunch'},
   {d:7, s:14, e:17.5, c:'biz', t:'iFlytek'},
-  {d:7, s:17.5, e:20.5, c:'meal', t:'Dinner'},
-  {d:7, s:20.5, e:23, c:'free', t:'Free time'},
+  {d:7, s:17.5, e:20, c:'meal', t:'Dinner'},
+  {d:7, s:20, e:23, c:'free', t:'Free time'},
   {d:7, s:23, e:24, c:'sleep', t:'Sleep'},
 
   // Day 9 — 26 May Beijing · FREE DAY
-  {d:8, s:5.5, e:20.5, c:'free', t:'Free time — full day'},
-  {d:8, s:20.5, e:21.5, c:'admin', t:'Briefing'},
-  {d:8, s:21.5, e:23, c:'free', t:'Free time'},
-  {d:8, s:23, e:24, c:'sleep', t:'Sleep'},
+  {d:8, s:5.5, e:24, c:'free', t:'Free time — full day'},
 
-  // Day 10 — 27 May Beijing · Peking Uni / JDL
-  {d:9, s:5.5, e:8.5, c:'free', t:'Free time'},
-  {d:9, s:8.5, e:9.5, c:'admin', t:'Wake up'},
-  {d:9, s:9.5, e:10.5, c:'travel', t:'Travel'},
-  {d:9, s:10.5, e:12.5, c:'biz', t:'Peking Uni / JDL'},
-  {d:9, s:12.5, e:14, c:'meal', t:'Lunch'},
-  {d:9, s:14, e:18, c:'free', t:'Free time'},
-  {d:9, s:18, e:20.5, c:'meal', t:'Dinner'},
-  {d:9, s:20.5, e:23, c:'free', t:'Free time'},
+  // Day 10 — 27 May Beijing · JDL
+  {d:9, s:5.5, e:8, c:'free', t:'Free time'},
+  {d:9, s:8, e:9, c:'admin', t:'Wake up'},
+  {d:9, s:9, e:10, c:'travel', t:'Travel'},
+  {d:9, s:10, e:12.5, c:'biz', t:'JDL'},
+  {d:9, s:12.5, e:13, c:'travel', t:'Travel'},
+  {d:9, s:13, e:14, c:'meal', t:'Lunch'},
+  {d:9, s:14, e:17.5, c:'tour', t:'Tourism'},
+  {d:9, s:17.5, e:19.5, c:'meal', t:'Dinner'},
+  {d:9, s:19.5, e:23, c:'free', t:'OTOT'},
   {d:9, s:23, e:24, c:'sleep', t:'Sleep'},
 
   // Day 11 — 28 May BJ→SG
-  {d:10, s:5.5, e:8, c:'free', t:'Free time'},
-  {d:10, s:8, e:13, c:'travel', t:'Travel time + Airport'},
-  {d:10, s:13, e:15, c:'travel', t:'Flight'},
-  {d:10, s:15, e:16, c:'admin', t:'End of SPMSoars'},
+  {d:10, s:5.5, e:13, c:'travel', t:'Travel + Airport'},
+  {d:10, s:13, e:18, c:'travel', t:'Flight'},
+  {d:10, s:18, e:20, c:'admin', t:'Bye bye chat'},
 ];
 
 const grid = document.getElementById('grid');
@@ -370,15 +374,4 @@ document.querySelectorAll('.view-btn').forEach(btn=>{
 });
 document.querySelectorAll('.filter').forEach(btn=>{
   btn.addEventListener('click',()=>{
-    document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const cat = btn.dataset.cat;
-    document.querySelectorAll('.event, .activity').forEach(el=>{
-      if(cat==='all') el.classList.remove('dimmed');
-      else el.classList.toggle('dimmed', el.dataset.cat !== cat);
-    });
-  });
-});
-</script>
-</body>
-</html>
+    document.querySelectorAll('.filter').forEach(b=>b.classLi
