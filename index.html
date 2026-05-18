@@ -374,4 +374,15 @@ document.querySelectorAll('.view-btn').forEach(btn=>{
 });
 document.querySelectorAll('.filter').forEach(btn=>{
   btn.addEventListener('click',()=>{
-    document.querySelectorAll('.filter').forEach(b=>b.classLi
+    document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    document.querySelectorAll('.event, .activity').forEach(el=>{
+      if(cat==='all') el.classList.remove('dimmed');
+      else el.classList.toggle('dimmed', el.dataset.cat !== cat);
+    });
+  });
+});
+</script>
+</body>
+</html>
